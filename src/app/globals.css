@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Farver */
+  --color-primary: #646d55;
+  --color-secondary: #eae6db;
+  --color-tertiary: #bcc1ae;
+  --color-surface: #d0c8b4;
+  --color-cta: #de774d;
+  --color-error: #e57373;
+
+  /* Typografi */
+  --font-primary: "Skeena", sans-serif;
+  --text-display: 2.5rem;
+  --text-heading: 1.75rem;
+  --text-title: 1.5rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-tiny: 0.75rem;
+  --text-logo: 1.25rem;
+
+  /* Linjeafstand */
+  --text-display--line-height: 3.3125rem;
+  --text-heading--line-height: 2.625rem;
+  --text-title--line-height: 2rem;
+  --text-body--line-height: 1.5rem;
+  --text-small--line-height: 1.25rem;
+  --text-tiny--line-height: 1rem;
+  --text-logo--line-height: 0.8rem;
+
+  /* Spacing */
+  --spacing-s: 0.1rem;
+  --spacing-m: 0.2rem;
+  --spacing-l: 0.4rem;
+  --spacing-xl: 0.6rem;
+  --spacing-mobile: 1.5rem;
+  --spacing-desktop: 7.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  h1 {
+    font-size: var(--text-display);
+    line-height: var(--text-display--line-height);
+    font-family: var(--font-primary);
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  h2 {
+    font-size: var(--text-heading);
+    line-height: var(--text-heading--line-height);
+    font-family: var(--font-primary);
+  }
+
+  h3 {
+    font-size: var(--text-title);
+    line-height: var(--text-title--line-height);
+    font-family: var(--font-primary);
+  }
+
+  p {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    font-family: var(--font-primary);
+  }
+
+  small {
+    font-size: var(--text-small);
+    line-height: var(--text-small--line-height);
+  }
 }
