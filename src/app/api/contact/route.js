@@ -4,7 +4,7 @@ export async function POST(req) {
   const body = await req.json();
   const {name, email, phone, company_name, employees, interest, message} = body;
 
-  const {error} = await supabase.from("Contact formular").insert([
+  const {error} = await supabase.from("contact_formular").insert([
     {
       name,
       email,
