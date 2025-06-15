@@ -48,9 +48,9 @@ export default function QuoteSlider() {
     );
   };
   return (
-    <section className="w-full bg-primary flex flex-col lg:flex lg:flex-row lg:justify-between text-secondary lg:py-40  px-desktop">
-      <div className="flex flex-col gap-6">
-        <div className=" ">
+    <section className="w-full bg-primary flex flex-col lg:flex lg:flex-row lg:justify-between text-secondary  lg:py-40  px-desktop">
+      <div className="flex flex-col gap-6 lg:w-1/3 ">
+        <div>
           <h1>
             En sundhedsordning skal kunne mærkes - både fysisk og i
             arbejdsmiljøet.
@@ -75,7 +75,7 @@ export default function QuoteSlider() {
           </button>
         </div>
       </div>
-      <div className="lg:w-3xl flex flex-col lg:gap-6">
+      <div className="lg:w-2/5 flex flex-col lg:gap-6">
         <h2 className="">
           <ImQuotesLeft />
           {quotes[currentIndex].text}"
