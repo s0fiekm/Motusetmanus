@@ -75,7 +75,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4 ">
       <div className="col-span-2 flex flex-col">
         <input
           name="name"
@@ -188,7 +188,7 @@ export default function ContactForm() {
           className="border-b p-2 outline-none border-primary bg-transparent placeholder-primary"
         />
       </div>
-      <div className="flex justify-end justify-items-end">
+      <div className="col-2 flex justify-self-end">
         <CTAButton type="submit" loading={loading} text="Send besked" />
       </div>
       {status && (
