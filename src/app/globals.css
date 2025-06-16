@@ -40,6 +40,28 @@
   --spacing-desktop: 7.5rem;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --text-display: 2rem;
+    --text-display--line-height: 2.5rem;
+
+    --text-heading: 1.5rem;
+    --text-heading--line-height: 2.125rem;
+
+    --text-title: 1.25rem;
+    --text-title--line-height: 1.75rem;
+
+    --text-body: 0.95rem;
+    --text-body--line-height: 1.5rem;
+
+    --text-small: 0.8rem;
+    --text-small--line-height: 1.25rem;
+
+    --text-tiny: 0.7rem;
+    --text-tiny--line-height: 1rem;
+  }
+}
+
 @layer base {
   h1 {
     font-size: var(--text-display);

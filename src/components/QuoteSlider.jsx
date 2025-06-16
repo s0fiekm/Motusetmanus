@@ -48,8 +48,8 @@ export default function QuoteSlider() {
     );
   };
   return (
-    <section className="w-full bg-primary flex flex-col lg:flex lg:flex-row lg:justify-between text-secondary  lg:py-40  px-desktop">
-      <div className="flex flex-col gap-6 lg:w-1/3 ">
+    <section className="w-full bg-primary gap-5 lg:gap-0 flex flex-col lg:flex lg:flex-row lg:justify-between text-secondary  lg:py-40 px-mobile py-20  lg:px-desktop">
+      <div className="flex flex-col gap-10 w-full lg:w-1/3 ">
         <div>
           <h1>
             En sundhedsordning skal kunne mærkes - både fysisk og i
@@ -60,16 +60,16 @@ export default function QuoteSlider() {
             & Manus.
           </p>
         </div>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 ">
           <button
             onClick={handlePrev}
-            className="w-10 h-10 bg-secondary text-cta rounded-full flex justify-center items-center hover:text-secondary hover:bg-cta "
+            className=" w-8 h-8 text-small lg:w-10 lg:h-10 bg-secondary text-cta rounded-full flex justify-center items-center hover:text-secondary hover:bg-cta "
           >
             <FaArrowLeftLong />
           </button>
           <button
             onClick={handleNext}
-            className="w-10 h-10 bg-secondary text-cta rounded-full flex justify-center items-center hover:text-secondary hover:bg-cta "
+            className="w-8 h-8 text-small lg:w-10 lg:h-10 bg-secondary text-cta rounded-full flex justify-center items-center hover:text-secondary hover:bg-cta "
           >
             <FaArrowRight />
           </button>
@@ -77,7 +77,7 @@ export default function QuoteSlider() {
       </div>
       <div className="lg:w-2/5 flex flex-col lg:gap-6">
         <h2 className="">
-          <ImQuotesLeft />
+          <ImQuotesLeft className="text-medium lg:text-4xl" />
           {quotes[currentIndex].text}"
         </h2>
         <h3 className="">- {quotes[currentIndex].author}</h3>
