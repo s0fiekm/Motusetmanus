@@ -9,7 +9,7 @@ export default function FAQAccordion() {
   const categories = Object.keys(faqData);
 
   return (
-    <div className="flex flex-col lg:flex-row w-full gap-10">
+    <div className="flex flex-col lg:h-[300px] lg:flex-row w-full ">
       <div className="lg:w-1/3 lg:border-r lg:border-gray-300 pr-4">
         {categories.map((cat) => (
           <button

@@ -1,11 +1,11 @@
 import React from "react";
 import FAQAccordion from "./FAQAccordion";
 
-export default function FaqSection() {
+export default function FAQSection() {
   return (
     <section
       id="FAQ"
-      className="w-full bg-secondary px-mobile lg:px-desktop text-primary flex flex-col  lg:gap-10 py-30"
+      className="w-full bg-secondary gap-0 px-mobile lg:px-desktop text-primary py-20 lg:py-30 "
     >
       <h2>Ofte stillede spørgsmål</h2>
       <FAQAccordion />
