@@ -1,13 +1,25 @@
+"use client";
 import React from "react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="w-full bg-[url('/assets/hero.jpg')] bg-cover bg-center h-[90vh]">
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <h1>
-          Sundhedspakke til Virksomheder - Manuel Behandling & Fysioterapi
-        </h1>
+    <section className="w-full relative  h-[90vh]">
+      <Image
+        src="/assets/hero.jpg"
+        alt="Hero image"
+        fill
+        className="object-cover"
+      />
+
+      <div className="absolute inset-0 bg-black/40 z-0" />
+      <div className="absolute inset-0 z-10 flex items-center justify-center text-center">
+        <div className="text-secondary max-w-4xl ">
+          <h1>
+            Sundhedspakke til Virksomheder - Manuel Behandling & Fysioterapi
+          </h1>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
