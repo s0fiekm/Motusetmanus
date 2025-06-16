@@ -32,7 +32,10 @@
   --text-logo--line-height: 0.8rem;
 
   /* Spacing */
-
+  --spacing-s: 0.5rem;
+  --spacing-m: 0.2rem;
+  --spacing-l: 0.3rem;
+  --spacing-xl: 0.4rem;
   --spacing-mobile: 1.5rem;
   --spacing-desktop: 7.5rem;
 }
@@ -91,6 +94,18 @@
   small {
     font-size: var(--text-small);
     line-height: var(--text-small--line-height);
+  }
+
+  h1 + p {
+    margin-top: var(--spacing-xl);
+  }
+
+  h2 + p {
+    margin-top: var(--spacing-l);
+  }
+
+  h3 + p {
+    margin-top: var(--spacing-m);
   }
 }
 

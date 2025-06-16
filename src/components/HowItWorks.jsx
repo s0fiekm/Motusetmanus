@@ -1,41 +1,55 @@
-import React from "react";
-import HowItWorksCard from "./HowItWorksCard";
+"use client";
+import {motion} from "framer-motion";
+import FlowStep from "@/components/FlowStep";
 
-export default function HowItWorks() {
+const steps = [
+  {
+    number: "01",
+    title: "Briks på jeres lokation",
+    text: "En eksklusiv sammenfoldelig briks deponeres hos jer.",
+  },
+  {
+    number: "02",
+    title: "Behandling i lokale",
+    text: "Foregår i et rum på min. 10 m² (fx mødelokale).",
+  },
+  {
+    number: "03",
+    title: "Varighed",
+    text: "30, 45 eller 60 min. pr. session.",
+  },
+  {
+    number: "04",
+    title: "Forløbsmodel",
+    text: "2–4 behandlinger pr. måned i 2–3 måneder.",
+  },
+];
+
+export default function HowItWorksSection() {
   return (
-    <section
-      id="howItWorks"
-      className="bg-primary w-full flex flex-col items-center text-secondary py-20 px-mobile lg:px-desktop"
-    >
-      <h2 className="text-2xl lg:text-4xl mb-10 text-center">
-        Hvordan fungerer det?
-      </h2>
+    <section className=" relative w-full bg-primary text-secondary py-20 px-6">
+      <h2 className=" text-center mb-20">Hvordan fungerer det?</h2>
 
-      <div className="flex flex-col lg:flex-row lg:justify-center lg:gap-10 w-full">
-        <HowItWorksCard
-          number="01"
-          title="Jeres eksklusive sammenfoldelige briks"
-          text="vil blive deponeret på jeres lokation"
-          align="left"
+      <div className="relative lg:px-desktop mx-auto">
+        <motion.div
+          className="hidden lg:block absolute top-[24px] left-30 right-30 h-[1px] bg-secondary rounded-full z-0"
+          style={{transformOrigin: "left"}}
+          initial={{scaleX: 0, opacity: 0}}
+          whileInView={{scaleX: 1, opacity: 1}}
+          viewport={{once: true}}
+          transition={{duration: 1, delay: 1}}
         />
-        <HowItWorksCard
-          number="02"
-          title="Behandling foregår i et lokale på mindst 10 m²"
-          text="(fx et mødelokale eller frit rum)"
-          align="right"
-        />
-        <HowItWorksCard
-          number="03"
-          title="Varighed:"
-          text="30, 45 eller 60 minutter pr. session"
-          align="left"
-        />
-        <HowItWorksCard
-          number="04"
-          title="Anbefalet forløbsmodel:"
-          text="2-4 behandlinger pr. måned over 2-3 måneder"
-          align="right"
-        />
+
+        <div className="flex flex-col lg:flex lg:flex-row justify-between items-start  relative z-0">
+          {steps.map((step, index) => (
+            <FlowStep
+              key={index}
+              number={step.number}
+              title={step.title}
+              text={step.text}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
