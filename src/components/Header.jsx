@@ -1,24 +1,31 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import CTAButton from "./CtaBtn";
+import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="bg-primary py-8 flex flex-row justify- items-center gap-4 w-full">
-      <div className=" flex flex-col justify-center items-center gap-2 ">
-        <Image src="/assets/logo.svg" width={100} height={100} alt="Logo" />
+    <header className="bg-primary py-4 flex flex-row lg:px-desktop justify-between items-center gap-4 w-full">
+      <Link
+        href="/"
+        className=" flex flex-col justify-center items-center gap-2 "
+      >
+        <Image src="/assets/logo.svg" width={80} height={80} alt="Logo" />
         <span className="text-logo text-secondary ">Motus og Manus</span>
-      </div>
-      <nav className="flex flex-row gap-6 text-secondary">
+      </Link>
+      <nav className="flex flex-row  gap-6 text-secondary">
         <a href="#about">Om mig</a>
 
-        <a href="#howItWorks">Hvordan fungerer det?</a>
+        <Link href="#howItWorks">Hvordan fungerer det?</Link>
 
-        <a href="#price">Pris og betalingsmuligheder</a>
+        <Link href="#price">Pris og betalingsmuligheder</Link>
 
-        <a href="#contact">Kontakt</a>
+        <Link href="#contact">Kontakt</Link>
 
-        <a href="#FAQ">FAQ</a>
+        <Link href="#FAQ">FAQ</Link>
       </nav>
+      <CTAButton text="Book møde nu" href="/booking" target="_blank" />
     </header>
   );
 }
