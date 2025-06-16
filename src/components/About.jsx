@@ -6,17 +6,17 @@ export default function About() {
   return (
     <section
       id="about"
-      className="lg:flex lg:flex-row w-full lg:justify-between  lg:pr-30 items-center bg-surface  flex flex-col"
+      className=" lg:px-desktop lg:py-20 lg:grid lg:grid-cols-2 w-full   items-center bg-surface  flex flex-col"
     >
-      <div className="relative w-full lg:w-1/3 h-[660px]">
+      <div className="relative w-[500px] h-[580px]  ">
         <Image
           src="/assets/mikkel.jpg"
           alt="Mikkel"
           fill
-          className="object-cover"
+          className="object-cover object-[70%_20%] "
         />
       </div>
-      <div className="text-primary flex flex-col gap-5 lg:w-3xl py-10  px-mobile lg:px-desktop text-balance">
+      <div className="text-primary flex flex-col gap-5  py-20  px-mobile  text-balance">
         <div>
           <h2>Om Mig - Mikkel Kjær Regnér, Fysioterapeut</h2>
           <p>
@@ -26,7 +26,7 @@ export default function About() {
             kurser der har udbygget min viden indenfor:
           </p>
         </div>
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-4 opacity-70">
           <li className="flex flex-row items-center gap-2 text-primary">
             <GoDotFill />
             <p>Massage & bindevævsbehandling (for at løsne dybe spændinger)</p>

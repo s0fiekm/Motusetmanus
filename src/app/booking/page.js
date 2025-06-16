@@ -17,7 +17,7 @@ export default function BookingPage() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-black/40 z-10"></div>
+
           <div className="px-mobile lg:px-desktop absolute z-20 inset-0 flex flex-col justify-center items-center text-secondary text-center">
             <h1>Book en indledende samtale</h1>
             <p className="text-pretty ">
@@ -28,12 +28,12 @@ export default function BookingPage() {
             </p>
           </div>
         </div>
-        <div className="bg-secondary flex flex-col h-full   w-full">
-          <div className="w-full mt-4 flex items-start lg:px-10">
+        <div className="bg-secondary flex flex-col h-full lg:py-15 lg:px-desktop lg:justify-center lg:items-center w-full">
+          <div className="w-full ">
             <StepIndicator currentStep={step} />
           </div>
-          <div className=" py-20 px-mobile lg:px-desktop">
-            <div className=" w-full    rounded-xl">
+          <div className=" py-10">
+            <div className=" ">
               <BookingForm step={step} setStep={setStep} />
             </div>
           </div>

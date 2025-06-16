@@ -1,19 +1,38 @@
-// components/BookingForm.jsx
 "use client";
-
+import {useRouter} from "next/navigation";
 import {useState} from "react";
+import {useEffect} from "react";
 import FormItem from "./FormItem";
-import CtaBtn from "./CtaBtn";
-
 import DatePicker from "react-datepicker";
 import {registerLocale} from "react-datepicker";
 import da from "date-fns/locale/da";
 import "react-datepicker/dist/react-datepicker.css";
-import {set} from "date-fns";
 
 registerLocale("da", da);
 
 export default function BookingForm({step, setStep}) {
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  const [bookedTimes, setBookedTimes] = useState([]);
+
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchBookedTimes = async () => {
+      if (!selectedDate) return;
+      const formattedDate = selectedDate.toISOString().split("T")[0];
+
+      const res = await fetch(`/api/booking/slots?date=${formattedDate}`);
+      const result = await res.json();
+      setBookedTimes(result.bookedTimes || []);
+    };
+
+    fetchBookedTimes();
+  }, [selectedDate]);
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     company_name: "",
     adress: "",
@@ -28,11 +47,6 @@ export default function BookingForm({step, setStep}) {
     message: "",
   });
 
-  const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  const [selectedDate, setSelectedDate] = useState(null);
   const timeOptions = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00"];
 
   const handleChange = (e) => {
@@ -101,21 +115,7 @@ export default function BookingForm({step, setStep}) {
       const data = await res.json();
 
       setStatus("Booking successful!");
-      setFormData({
-        company_name: "",
-        adress: "",
-        zip_code: "",
-        city: "",
-        first_name: "",
-        last_name: "",
-        email: "",
-        phone: "",
-        date: null,
-        time: "",
-        message: "",
-      });
-      setSelectedDate(null);
-      setStep(1);
+      setStep(5);
     } catch (error) {
       console.error("Netværksfejl:", error);
       setStatus("Noget gik galt – prøv igen senere.");
@@ -129,12 +129,12 @@ export default function BookingForm({step, setStep}) {
     2: "Vælg en dato og et tidspunkt for samtalen",
     3: "Har du spørgsmål, særlige behov eller kommentarer?",
     4: "Tjek dine oplysninger og bekræft bookingen",
+    5: "Tak for din booking",
   };
 
   return (
     <div className="w-full flex flex-col gap-6">
-      <h3 className="text-primary">{stepTexts[step]}</h3>
-
+      <h2 className="text-primary">{stepTexts[step]}</h2>
       {step === 1 && (
         <div className="flex flex-col gap-4">
           <div>
@@ -234,7 +234,7 @@ export default function BookingForm({step, setStep}) {
       )}
 
       {step === 2 && (
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-8">
           <DatePicker
             selected={selectedDate}
             onChange={(date) => {
@@ -255,7 +255,7 @@ export default function BookingForm({step, setStep}) {
           {errors.date && (
             <p className="text-error text-sm mt-2">{errors.date}</p>
           )}
-          <p>
+          <p className="text-primary">
             Tilgængelige tider for {""}
             <span>
               {selectedDate
@@ -267,32 +267,38 @@ export default function BookingForm({step, setStep}) {
                   })
                 : "vælg en dato"}
             </span>
-          </p>{" "}
-          <div className="flex flex-wrap justify-between gap-2">
-            {timeOptions.map((time) => (
-              <button
-                key={time}
-                onClick={() => {
-                  setFormData({...formData, time});
-                  if (errors.time) {
-                    setErrors((prevErrors) => ({
-                      ...prevErrors,
-                      time: undefined,
-                    }));
-                  }
-                }}
-                className={`
-                  px-4 h-10 rounded border text-sm transition
-                  ${
-                    formData.time === time
-                      ? "bg-cta text-white border-cta"
-                      : "bg-secondary border-primary text-primary hover:bg-tertiary hover:text-white"
-                  }
-                `}
-              >
-                {time}
-              </button>
-            ))}
+          </p>
+          <div className="flex flex-wrap   gap-4">
+            {timeOptions.map((time) => {
+              const isBooked = bookedTimes.includes(time);
+
+              return (
+                <button
+                  key={time}
+                  onClick={() => {
+                    if (!isBooked) {
+                      setFormData({...formData, time});
+                      if (errors.time) {
+                        setErrors((prevErrors) => ({
+                          ...prevErrors,
+                          time: undefined,
+                        }));
+                      }
+                    }
+                  }}
+                  disabled={isBooked}
+                  className={`px-4 h-10 rounded border text-sm transition ${
+                    isBooked
+                      ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                      : formData.time === time
+                      ? "bg-tertiary text-secondary border-primary"
+                      : "bg-secondary border-primary text-primary hover:bg-tertiary "
+                  }`}
+                >
+                  {time}
+                </button>
+              );
+            })}
           </div>
           {errors.time && (
             <p className="text-error text-sm mt-2">{errors.time}</p>
@@ -315,7 +321,6 @@ export default function BookingForm({step, setStep}) {
           )}
         </div>
       )}
-
       {step === 4 && (
         <div className="text-primary">
           <p className="mb-4 text-lg font-semibold">
@@ -338,11 +343,61 @@ export default function BookingForm({step, setStep}) {
           </ul>
         </div>
       )}
-
+      {step === 5 && (
+        <div className="text-primary text-center flex flex-col items-center gap-4">
+          <p>
+            Vi har modtaget din forespørgsel og kontakter dig snarest muligt.
+          </p>
+          <div className="bg-secondary p-4 rounded-xl text-left w-full max-w-md">
+            <p>
+              <strong>Navn:</strong> {formData.first_name} {formData.last_name}
+            </p>
+            <p>
+              <strong>Virksomhed:</strong> {formData.company_name}
+            </p>
+            <p>
+              <strong>Dato:</strong> {formData.date}
+            </p>
+            <p>
+              <strong>Tid:</strong> {formData.time}
+            </p>
+            <p>
+              <strong>Email:</strong> {formData.email}
+            </p>
+          </div>
+          <button
+            className="px-5 py-2 rounded-xl bg-cta text-secondary text-sm hover:bg-ctaDark transition-all mt-4"
+            onClick={() => router.push("/")}
+          >
+            Til forsiden
+          </button>
+        </div>
+      )}
       <div className="flex flex-row justify-between items-center mt-4">
-        {step > 1 && <CtaBtn text="Tilbage" onClick={handlePrev} />}
-        {step < 4 && <CtaBtn text="Næste" onClick={handleNext} />}
-        {step === 4 && <CtaBtn text="Book nu" onClick={handleSubmit} />}
+        {step > 1 && step < 5 && (
+          <button
+            onClick={handlePrev}
+            className="px-5 py-2 rounded-xl border border-cta text-cta text-sm hover:bg-cta/10 transition-all"
+          >
+            Tilbage
+          </button>
+        )}
+        {step < 4 && (
+          <button
+            onClick={handleNext}
+            className="px-5 py-2 rounded-xl bg-cta text-secondary text-sm hover:bg-ctaDark transition-all"
+          >
+            Næste
+          </button>
+        )}
+        {step === 4 && (
+          <button
+            onClick={handleSubmit}
+            className="px-5 py-2 rounded-xl bg-cta text-secondary text-sm hover:bg-ctaDark transition-all"
+          >
+            Book nu
+          </button>
+        )}
       </div>
     </div>
   );

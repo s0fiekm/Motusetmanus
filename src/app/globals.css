@@ -6,7 +6,7 @@
   --color-primary: #646d55;
   --color-secondary: #eae6db;
   --color-tertiary: #bcc1ae;
-  --color-surface: #d0c8b4;
+  --color-surface: #f2f0e9;
   --color-cta: #de774d;
   --color-ctaLight: #ebad94;
   --color-ctaDark: #b25f3e;
@@ -36,16 +36,16 @@
   --spacing-m: 0.2rem;
   --spacing-l: 0.3rem;
   --spacing-xl: 0.4rem;
-  --spacing-mobile: 1.5rem;
+  --spacing-mobile: 2rem;
   --spacing-desktop: 7.5rem;
 }
 
 @media (max-width: 768px) {
   :root {
-    --text-display: 2rem;
-    --text-display--line-height: 2.5rem;
+    --text-display: 1.8rem;
+    --text-display--line-height: 2.2rem;
 
-    --text-heading: 1.5rem;
+    --text-heading: 1.4rem;
     --text-heading--line-height: 2.125rem;
 
     --text-title: 1.25rem;
@@ -115,7 +115,7 @@
   border-radius: 1rem !important;
   padding: 0 !important;
   font-family: "Skeena", sans-serif !important;
-  width: 35rem !important;
+  width: auto !important;
 }
 
 .react-datepicker__month-container {
@@ -125,6 +125,7 @@
 
 .react-datepicker__month {
   margin: 0 !important;
+  padding: 0 !important;
 }
 
 .react-datepicker__header {
@@ -173,5 +174,9 @@
 
 .react-datepicker__navigation--previous {
   top: 20px !important;
-  margin-left: 480px;
+  margin-left: 400px;
+}
+
+html {
+  scroll-behavior: smooth;
 }

@@ -40,7 +40,7 @@ export default function HowItWorksSection() {
           transition={{duration: 1, delay: 1}}
         />
 
-        <div className="flex flex-col lg:flex lg:flex-row justify-between items-start  relative z-0">
+        <div className="flex flex-col justify-center items-center lg:flex lg:flex-row lg:justify-between gap-4 lg:items-start  relative z-0">
           {steps.map((step, index) => (
             <FlowStep
               key={index}
