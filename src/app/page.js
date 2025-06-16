@@ -4,7 +4,7 @@ import HowItWorks from "@/components/HowItWorks";
 import Prices from "@/components/Prices";
 import Trial from "@/components/Trial";
 import Pros from "@/components/Pros";
-import FaqSection from "@/components/FaqSection";
+import FAQSection from "@/components/FAQSection";
 import QuoteSlider from "@/components/QuoteSlider";
 import Hero from "@/components/Hero";
 import ContactInfo from "@/components/ContactInfo";
@@ -22,7 +22,7 @@ export default function Home() {
         <ContactInfo />
         <Contact />
         <QuoteSlider />
-        <FaqSection />
+        <FAQSection />
       </main>
     </div>
   );
