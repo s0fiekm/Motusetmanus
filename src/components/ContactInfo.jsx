@@ -3,24 +3,43 @@ import Image from "next/image";
 
 export default function ContactInfo() {
   return (
-    <div className="w-full bg-surface flex flex-col lg:grid lg:grid-cols-3">
-      <div className="col-span-1">
+    <div className="w-full min-h-[70vh] bg-surface flex flex-col lg:grid lg:grid-cols-2 ">
+      <div className="relative h-[600px] lg:h-auto w-full">
         <Image
           src="/assets/contact.jpg"
           alt="Portræt af fysioterapeut i behandling "
-          width={600}
-          height={800}
-          className="object-cover w-full h-full "
+          fill
+          className="object-cover object-[70%_20%] "
         />
       </div>
-      <div>
-        <h2>Kontakt</h2>
-        <h3>Lad os sammen skabe en sundere og mere produktiv arbejdsplads!</h3>
-        <p>Kontakt mig for en uforpligtende samtale</p>
-        <ul>
-          <li>+45 00 00 00 00</li>
-          <li>email@mail.dk</li>
-        </ul>
+      <div className="text-primary gap-10 lg:gap-20 lg:justify-center flex flex-col py-15 px-mobile lg:px-desktop lg:py-20">
+        <div className="flex flex-col  w-90">
+          <h2>Kontakt</h2>
+          <h3>
+            Lad os sammen skabe en sundere og mere produktiv arbejdsplads!
+          </h3>
+        </div>
+        <div className="flex flex-col gap-5  lg:flex lg:flex-row items-start lg:gap-20 ">
+          <ul>
+            <li>Mikkel Kjær Regnér </li>
+            <li> København og omegn</li>
+          </ul>
+          <ul>
+            <li>+45 00 00 00 00</li>
+            <li>
+              <a
+                href="mailto:email@mail.dk"
+                className="underline hover:opacity-80"
+              >
+                email@mail.dk
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>Motus og Manus</li>
+            <li>CVR: 12345678</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

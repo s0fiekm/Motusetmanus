@@ -32,10 +32,7 @@
   --text-logo--line-height: 0.8rem;
 
   /* Spacing */
-  --spacing-s: 0.5rem;
-  --spacing-m: 0.5rem;
-  --spacing-l: 0.7rem;
-  --spacing-xl: 1rem;
+
   --spacing-mobile: 1.5rem;
   --spacing-desktop: 7.5rem;
 }
