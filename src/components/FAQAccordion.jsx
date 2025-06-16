@@ -9,8 +9,8 @@ export default function FAQAccordion() {
   const categories = Object.keys(faqData);
 
   return (
-    <div className="flex flex-col lg:flex-row w-full  mx-auto gap-10">
-      <div className="lg:w-1/3 border-r border-gray-300 pr-4">
+    <div className="flex flex-col lg:flex-row w-full gap-10">
+      <div className="lg:w-1/3 lg:border-r lg:border-gray-300 pr-4">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -28,7 +28,7 @@ export default function FAQAccordion() {
           </button>
         ))}
       </div>
-      <div className="lg:w-2/3 pl-4 text-primary">
+      <div className="lg:w-2/3 lg:pl-4 text-primary">
         {faqData[selectedCategory].map((item, index) => (
           <div key={index} className="border-b border-tertiary py-4">
             <button
