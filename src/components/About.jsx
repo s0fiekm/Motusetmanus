@@ -16,7 +16,7 @@ export default function About() {
           className="object-cover"
         />
       </div>
-      <div className="text-primary flex flex-col gap-5 lg:w-3xl p-10 lg:p-0 text-balance">
+      <div className="text-primary flex flex-col gap-5 lg:w-3xl py-10  px-mobile lg:px-desktop text-balance">
         <div>
           <h2>Om Mig - Mikkel Kjær Regnér, Fysioterapeut</h2>
           <p>

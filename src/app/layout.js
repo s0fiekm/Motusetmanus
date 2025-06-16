@@ -1,6 +1,7 @@
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Motus & Manus",
@@ -16,7 +17,7 @@ export default function RootLayout({children}) {
       <body className="min-h-screen font-primary mx-auto">
         <Header />
         <main>{children}</main>
-        {/* Din Footer */}
+        <Footer />{" "}
       </body>
     </html>
   );

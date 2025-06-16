@@ -8,7 +8,7 @@ export default function Prices() {
       id="price"
       className="flex flex-col gap-10 lg:gap-0  lg:flex lg:flex-row w-full justify-between px-mobile lg:px-desktop bg-secondary py-30"
     >
-      <div className="lg:w-lg text-primary flex flex-col px-5 lg:px-0">
+      <div className="lg:w-lg text-primary flex flex-col lg:px-0">
         <h2>Pris & Betalingsløsninger</h2>
         <p>
           Få en fleksibel ordning, der kan tilpasses dine behov og dit budget –
@@ -36,7 +36,7 @@ export default function Prices() {
           </li>
         </ul>
       </div>
-      <div className="flex flex-col gap-5 px-5 lg:px-0">
+      <div className="flex flex-col gap-5 lg:px-0">
         <PaymentCard
           title="Virksomhedsfinaniseret"
           number="1"

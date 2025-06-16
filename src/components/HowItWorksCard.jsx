@@ -9,7 +9,7 @@ export default function HowItWorksCard({number, title, text, align}) {
         lg:justify-center
       `}
     >
-      <div className="w-[260px] h-[260px] lg:w-[360px] lg:h-[360px] lg:-ml-20 border border-secondary rounded-full flex flex-col items-center justify-center px-4">
+      <div className="w-[260px] h-[260px] lg:w-[360px] lg:h-[360px] lg:-ml-20 border border-secondary rounded-full flex flex-col items-center justify-center ">
         <div className="flex flex-col items-start text-left text-secondary max-w-[220px]">
           <h3 className="font-bold ">{number}</h3>
           <p className="font-bold">{title}</p>
