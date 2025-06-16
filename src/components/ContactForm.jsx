@@ -1,6 +1,6 @@
 "use client";
 import {useState} from "react";
-
+import CTAButton from "./CtaBtn";
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -188,17 +188,9 @@ export default function ContactForm() {
           className="border-b p-2 outline-none border-primary bg-transparent placeholder-primary"
         />
       </div>
-
-      <div className="col-span-2 flex justify-end">
-        <button
-          type="submit"
-          className="bg-cta text-secondary px-6 py-2 rounded-lg hover:opacity-90 transition"
-          disabled={loading}
-        >
-          {loading ? "Sender..." : "Send besked"}
-        </button>
+      <div className="flex justify-end justify-items-end">
+        <CTAButton type="submit" loading={loading} text="Send besked" />
       </div>
-
       {status && (
         <p className="col-span-2 text-center text-sm text-primary mt-2">
           {status}

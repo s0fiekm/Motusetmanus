@@ -1,6 +1,6 @@
 "use client";
 import React, {useState} from "react";
-import faqData from "@/data/Faqdata";
+import faqData from "@/data/faqData";
 
 export default function FAQAccordion() {
   const [selectedCategory, setSelectedCategory] = useState("behandling");
