@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function StepFour_Review({formData}) {
+export default function StepFour({formData}) {
   return (
     <div className="text-primary">
       <p className="mb-4 text-lg font-semibold">
