@@ -4,7 +4,7 @@ import {FaCircleDot, FaCircle} from "react-icons/fa6";
 export default function StepIndicator({currentStep}) {
   const steps = ["Kontakt", "Tidspunkt", "Besked", "Tjek"];
   return (
-    <div className="flex w-full items-start justify-between flex-row">
+    <div className="flex w-full items-center justify-between flex-row">
       {steps.map((label, index) => {
         const stepNumber = index + 1;
         const isCompleted = currentStep > stepNumber;
@@ -19,21 +19,21 @@ export default function StepIndicator({currentStep}) {
             <span
               className={`mt-2 text-tiny ${
                 isActive
-                  ? "text-cta font-medium"
+                  ? "text-primary font-semibold"
                   : isCompleted
-                  ? "text-cta"
-                  : "text-gray-50"
+                  ? "text-primary"
+                  : "text-primary opacity-70"
               }`}
             >
               {label}
             </span>
-            <div className="z-10">
+            <div className="z-10 ">
               {isCompleted ? (
-                <FaCircle className="text-ctaDark text-small" />
+                <FaCircle className="text-primary text-small" />
               ) : isActive ? (
-                <FaCircleDot className="text-cta text-small " />
+                <FaCircleDot className="text-primary text-small " />
               ) : (
-                <FaCircle className="text-ctaLight text-small" />
+                <FaCircle className="text-tertiary text-small" />
               )}
             </div>
             {index < steps.length - 1 && (
@@ -41,10 +41,10 @@ export default function StepIndicator({currentStep}) {
                 <div
                   className={`h-full ${
                     currentStep > stepNumber
-                      ? "bg-cta"
+                      ? "bg-primary"
                       : currentStep === stepNumber
-                      ? "bg-ctaLight "
-                      : "bg-gray-50"
+                      ? "bg-primary opacity-50 "
+                      : "bg-primary opacity-10"
                   }`}
                 />
               </div>

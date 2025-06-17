@@ -3,7 +3,7 @@ import ProsItem from "./ProsItem";
 
 export default function Pros() {
   return (
-    <section className="flex px-mobile lg:px-desktop flex-col w-full bg-secondary py-30 items-center gap-20">
+    <section className="  md:px-laptop flex px-mobile lg:px-desktop-m xl:px-desktop flex-col w-full bg-secondary py-30 items-center gap-20">
       <div className="flex flex-col text-center lg:w-3xl text-primary">
         <h3>
           Motus & Manus (latin for "bevægelse og hånd") tilbyder skræddersyede

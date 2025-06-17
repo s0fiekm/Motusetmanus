@@ -12,7 +12,7 @@ export default function ContactInfo() {
           className="object-cover object-[70%_20%] "
         />
       </div>
-      <div className="gap-10 text-primary  lg:gap-20 lg:justify-center flex flex-col py-15 px-mobile lg:px-desktop lg:py-20">
+      <div className="gap-10 text-primary  lg:gap-20 lg:justify-center flex flex-col py-15 px-mobile lg:px-desktop   md:px-laptop lg:py-20">
         <div className="flex flex-col  ">
           <h2 className="text-balance">
             Lad os sammen skabe en sundere og mere produktiv arbejdsplads!

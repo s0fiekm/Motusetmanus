@@ -6,7 +6,7 @@ export default function Prices() {
   return (
     <section
       id="price"
-      className="flex flex-col gap-10 lg:gap-0  lg:flex lg:flex-row w-full justify-between px-mobile lg:px-desktop bg-secondary py-30"
+      className="flex flex-col gap-10 lg:gap-0  lg:flex lg:flex-row w-full  md:px-laptop justify-between px-mobile lg:px-desktop-m xl:px-desktop bg-secondary py-30"
     >
       <div className="lg:w-lg text-primary flex flex-col lg:px-0">
         <h2>Pris & Betalingsløsninger</h2>

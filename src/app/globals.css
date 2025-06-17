@@ -37,10 +37,12 @@
   --spacing-l: 0.3rem;
   --spacing-xl: 0.4rem;
   --spacing-mobile: 2rem;
+  --spacing-laptop: 2rem;
+  --spacing-desktop-m: 3rem;
   --spacing-desktop: 7.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   :root {
     --text-display: 1.8rem;
     --text-display--line-height: 2.2rem;
@@ -59,6 +61,22 @@
 
     --text-tiny: 0.7rem;
     --text-tiny--line-height: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --text-display: 1.6rem;
+    --text-heading: 1.2rem;
+    --text-body: 0.8rem;
+  }
+}
+@media (max-width: 1023px) {
+  :root {
+    --text-display: 1.8rem;
+
+    --text-heading: 1.4rem;
+    --text-body: 0.9rem;
   }
 }
 
@@ -112,10 +130,9 @@
 .react-datepicker {
   background-color: #eae6db !important;
   border: none !important;
-  border-radius: 1rem !important;
-  padding: 0 !important;
+  padding: 0px !important;
   font-family: "Skeena", sans-serif !important;
-  width: auto !important;
+  width: 100% !important;
 }
 
 .react-datepicker__month-container {
@@ -174,7 +191,7 @@
 
 .react-datepicker__navigation--previous {
   top: 20px !important;
-  margin-left: 400px;
+  left: 200px !important;
 }
 
 html {

@@ -11,11 +11,8 @@ import {AnimatePresence, motion} from "framer-motion";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <header className="bg-primary py-4 flex lg:items-center flex-row px-mobile lg:px-desktop justify-between  gap-4 w-full">
-      <Link
-        href="/"
-        className=" flex flex-row justify-center items-center gap-4 "
-      >
+    <header className="bg-primary px-4 sm:px-6 md:px-8  md:px-laptop lg:px-desktop-m xl:px-desktop py-4 flex justify-between items-center">
+      <Link href="/" className=" flex flex-row items-center gap-4 ">
         <Image
           src="/assets/logo.svg"
           alt="Logo"
@@ -24,7 +21,9 @@ export default function Header() {
           sizes="100vw"
           className="w-12 h-12 lg:w-12 lg:h-12"
         />
-        <span className="text-secondary text-xl">Motus og Manus</span>
+        <span className="text-secondary  text-base xl:text-xl">
+          Motus og Manus
+        </span>
       </Link>
 
       <nav className="hidden lg:flex flex-row  gap-10 text-secondary ">

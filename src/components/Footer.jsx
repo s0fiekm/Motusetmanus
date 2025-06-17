@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className=" w-full px-mobile pt-10 pb-5 lg:pt-20 lg:px-desktop bg-tertiary text-primary  ">
+    <footer className=" md:px-laptop w-full pt-10 pb-5 lg:pt-20 px-mobile lg:px-desktop-m xl:px-desktop bg-tertiary text-primary  ">
       <div className="flex flex-col gap-6 lg:flex lg:flex-row lg:items-start lg:justify-between">
         <div className="">
           <p>Mikkel Kjær Regnér</p>

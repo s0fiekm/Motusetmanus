@@ -48,7 +48,7 @@ export default function QuoteSlider() {
     );
   };
   return (
-    <section className="w-full bg-primary gap-5 lg:gap-0 flex flex-col lg:flex lg:flex-row lg:justify-between text-secondary  lg:py-40 px-mobile py-20  lg:px-desktop">
+    <section className="w-full bg-primary gap-5 lg:gap-0 flex flex-col lg:flex lg:flex-row lg:justify-between text-secondary  lg:py-40 px-mobile py-20  lg:px-desktop-m xl:px-desktop  md:px-laptop">
       <div className="flex flex-col gap-10 w-full lg:w-1/3 ">
         <div>
           <h1>
