@@ -7,8 +7,4 @@ if (!supabaseUrl || !supabaseAnonKey) {
     "Supabase environment variables are not set. Check your .env.local file."
   );
 }
-export const supabase = createClient(
-  supabaseUrl,
-  supabaseAnonKey,
-  supabaseAdmin
-);
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);

@@ -1,6 +1,5 @@
 import {supabaseAdmin} from "@/lib/supabaseAdmin";
 
-supabaseAdmin;
 export async function GET(req) {
   const {searchParams} = new URL(req.url);
   const date = searchParams.get("date");
@@ -12,7 +11,7 @@ export async function GET(req) {
   }
 
   const {data, error} = await supabaseAdmin
-    .from("bookings")
+    .from("booking")
     .select("time")
     .eq("date", date);
 
@@ -22,6 +21,6 @@ export async function GET(req) {
     });
   }
 
-  const bookedTimes = data.map((entry) => entry.time);
+  const bookedTimes = data.map((entry) => entry.time.slice(0, 5));
   return new Response(JSON.stringify({bookedTimes}), {status: 200});
 }
