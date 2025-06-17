@@ -11,7 +11,7 @@ import {AnimatePresence, motion} from "framer-motion";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <header className="bg-primary px-4 sm:px-6 md:px-8  md:px-laptop lg:px-desktop-m xl:px-desktop py-4 flex justify-between items-center">
+    <header className="bg-primary px-4 sm:px-6  md:px-laptop lg:px-desktop-m xl:px-desktop py-4 flex justify-between items-center">
       <Link href="/" className=" flex flex-row items-center gap-4 ">
         <Image
           src="/assets/logo.svg"
