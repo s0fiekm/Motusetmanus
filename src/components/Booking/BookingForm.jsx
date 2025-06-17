@@ -8,7 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
-import StepFour from "./stepFour";
+import StepFour from "./StepFour";
 
 registerLocale("da", da);
 
