@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import {GoDotFill} from "react-icons/go";
+import { GoDotFill } from "react-icons/go";
 
 export default function About() {
   return (
@@ -22,26 +22,34 @@ export default function About() {
           <p>
             Jeg er specialiseret i manuel behandling med over 7 års erfaring,
             herunder 4 år hos Kiro Fys og 3 år i Massagekompagniet. Jeg har
-            behandlet mere end 1.000 timer og har deltaget i en bred vifte af
-            kurser der har udbygget min viden indenfor:
+            flere 1.000 timers behandlingserfaring og har deltaget i en bred
+            vifte af kurser der har udbygget min viden indenfor:
           </p>
         </div>
         <ul className="flex flex-col gap-4 opacity-70">
           <li className="flex flex-row items-center gap-2 text-primary">
             <GoDotFill />
-            <p>Massage & bindevævsbehandling (for at løsne dybe spændinger)</p>
+            <p>
+              Massage & bindevævsbehandling (løsne spændinger, fremme heling)
+            </p>
           </li>
           <li className="flex flex-row items-center gap-2 text-primary">
             <GoDotFill />
-            <p>Ledmobilisering & manipulation (til bedre bevægelighed)</p>
+            <p>Ledmobilisering & manipulation (bedre og friere bevægelighed)</p>
           </li>
           <li className="flex flex-row items-center gap-2 text-primary">
             <GoDotFill />
-            <p>Ergonomirådgivning (forebyggelse af gentagne belastninger)</p>
+            <p>Vestibulær rehabilitering (svimmelheds og balance behandling)</p>
           </li>
           <li className="flex flex-row items-center gap-2 text-primary">
             <GoDotFill />
-            <p>Kost- og træningsvejledning (for en mere bæredygtig livsstil)</p>
+            <p>
+              Ergonomirådgivning (forebyggelse af uhensigtsmæssig belastning)
+            </p>
+          </li>
+          <li className="flex flex-row items-center gap-2 text-primary">
+            <GoDotFill />
+            <p>Kost- og træningsvejledning (fremme langvarige resultater)</p>
           </li>
         </ul>
       </div>

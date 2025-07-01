@@ -8,12 +8,12 @@ const faqData = {
     {
       question: "Hvor lang tid varer en behandling?",
       answer:
-        "Du kan vælge mellem sessioner på 30, 45 eller 60 minutter, alt efter medarbejdernes behov.",
+        "I kan vælge mellem sessioner på 30, 45 eller 60 minutter, alt efter medarbejdernes behov.",
     },
     {
       question: "Skal vi have noget særligt udstyr?",
       answer:
-        "Nej, jeg medbringer alt nødvendigt udstyr. Jeg medbringer en foldbar briks, som bliver deponeret hos jer, I skal blot stille et rum til rådighed. ",
+        "Medbring gerne et håndklæde til at have over sig. Jeg medbringer alt udstyr, herunder en foldbar briks, som bliver deponeret hos jer, lagener og hovedbetræk, samt olie. ",
     },
     {
       question: "Skal man have smerter for at få behandling?",
@@ -40,16 +40,13 @@ const faqData = {
     {
       question: "Kan vi starte med en prøveperiode?",
       answer:
-        "Ja! Jeg tilbyder en prøvebehandling på op til 4 timer til halv pris - så I kan mærke værdien uden at forpligte jer.",
+        "Ja! Jeg tilbyder en introdag på op til 4 timer til halv pris - så i kan afprøve behandlingen uden at forpligte jer.",
     },
-    {
-      question: "Hvordan evalueres forløbet?",
-      answer:
-        "Vi kan lave en opsamling eller spørgeskema efter prøveperioden for at vurdere effekten. ",
-    },
+
     {
       question: "Skal vi have en fast aftale?",
-      answer: "Nej. I starter evt. med et prøveforløb - uden binding. ",
+      answer:
+        "Ja. Vi planlægger faste behandlingsdage over minimum 2 måneder, men hver enkel medarbejder kan melde sig ud af ordningen med 1 uges varsel",
     },
   ],
   "Pris og betaling": [
@@ -61,34 +58,32 @@ const faqData = {
     {
       question: "Hvordan kan vi sammensætte en betalingsmodel?",
       answer:
-        "I kan vælge mellem Virksomhedsbetalt ordning Deling mellem virksomhed og medarbejder (fx 50/50) Medarbejderbetalt via lønseddel (bruttolønsordning - skattefri)",
+        "Se pris & betalingsløsninger. En bruttoløsning vil foregå ved, at i viderebringer fakturen til jeres revisor, som vil stå for at håndtere finansieringen.",
     },
     {
       question: "Er der skjulte omkostninger?",
-      answer:
-        "Ja, det kan de. Vi kan lave ordningen via bruttolønsordning, så betalingen trækkes direkte af lønnen - helt skattefrit.",
+      answer: "Nej",
     },
     {
       question: "Kan medarbejdere selv betale?",
-      answer:
-        "JNej. Alt er inkluderet i timeprisen - ingen gebyrer eller ekstra tillæg.",
+      answer: "Ja, hvis det er et ønske for virksomheden.",
     },
   ],
   "Relevans og faglighed": [
     {
       question: "Er det sikkert og professionelt?",
       answer:
-        "Ja. Jeg er uddannet fysioterapeut og har over 7 års erfaring. Jeg arbejder uden olie og creme, så medarbejderen hurtigt kan vende tilbage til arbejdet.",
+        "Ja. Jeg er uddannet fysioterapeut og har over 7 års erfaring med en særlig interesse for det manuelle arbejde. I tilfælde af låsninger i led, findes der mere effektive behandlingsmetoder f.eks. ledmanipulation, som jeg vil tage ekstra sikkerhedsforbehold for, før udførelse. ",
     },
     {
       question: "Hvem er ordningen relevant for?",
       answer:
-        "Særligt kontoransatte og medarbejdere, der arbejder stillesiddende eller har gentagne bevægelser, oplever stor effekt af behandlingen.",
+        "Alle der har et ønske om større følelse af frihed og velvære i sin krop. Særligt kontoransatte som arbejder i længerevarende stillesiddende arbejdsmiljøer vil være gode kandidater til behandlingen",
     },
     {
       question: "Hvordan adskiller dette sig fra massageordninger?",
       answer:
-        "Behandlingen er fysioterapeutisk og målrettet konkrete gener - ikke wellness-massage",
+        "Der er mange ligheder, men den største forskel vil være min vidensbase og brede vifte af egenskaber indenfor sundhed. Jeg oplever ofte at mine klienter har mere brug for konkret vejledning i hvordan skader og gener kan undgåes, end de tror. Min viden indenfor udredelse er også en stor fordel ift. at finde motoren bag problemstillingerne og sætte præcist ind.",
     },
   ],
 };

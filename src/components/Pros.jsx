@@ -12,10 +12,10 @@ export default function Pros() {
         </h3>
         <p>
           Mange kontoransatte oplever spændinger, nakke- og rygsmerter på grund
-          af en række faktorer, blandt andet langvarigt stillesiddende arbejde
-          og inaktivitet. Ved at tilbyde kvalificeret manuel behandling og
-          fysioterapeutisk rådgivning på arbejdspladsen kan i styrke både
-          trivsel og bundlinje
+          af en række faktorer, blandt andet langvarigt stillesiddende arbejde,
+          stress og inaktivitet. Ved at tilbyde kvalificeret manuel behandling
+          og fysioterapeutisk rådgivning på arbejdspladsen kan i styrke både
+          trivsel og bundlinje.
         </p>
       </div>
       <div className=" w-full gap-5 lg:gap-0 flex flex-col lg:flex items-flex-start lg:justify-between lg:flex-row">
@@ -35,7 +35,7 @@ export default function Pros() {
           src="/assets/sundhed.svg"
           alt="sundhed-ikon"
           title="Skab en sund arbejdsplads"
-          text="En aktiv arbejdsdag giver energi og øget motivation."
+          text="En arbejdsplads med stressreducerende tilbud giver øget energi og fokus"
         />
       </div>
     </section>

@@ -21,7 +21,7 @@ export default function ContactInfo() {
             className="opacity-70 text-balance
 "
           >
-            Du er altid velkommen til at tage kontakt for en uforpligtende
+            I er altid velkommen til at tage kontakt for en uforpligtende
             samtale.
           </h3>
         </div>
@@ -31,19 +31,19 @@ export default function ContactInfo() {
             <li> København og omegn</li>
           </ul>
           <ul>
-            <li>+45 00 00 00 00</li>
+            <li>+45 81 61 63 05</li>
             <li>
               <a
                 href="mailto:email@mail.dk"
                 className="underline hover:opacity-80"
               >
-                email@mail.dk
+                motusetmanus@gmail.com
               </a>
             </li>
           </ul>
           <ul>
             <li>Motus og Manus</li>
-            <li>CVR: 12345678</li>
+            <li>CVR: 38774441 </li>
           </ul>
         </div>
       </div>

@@ -1,5 +1,5 @@
 "use client";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import FlowStep from "@/components/FlowStep";
 
 const steps = [
@@ -21,7 +21,7 @@ const steps = [
   {
     number: "04",
     title: "Forløbsmodel",
-    text: "2–4 behandlinger pr. måned i 2–3 måneder.",
+    text: "2–4 behandlingsdage pr. måned i 2–3 måneder.",
   },
 ];
 
@@ -33,11 +33,11 @@ export default function HowItWorksSection() {
       <div className="relative lg:px-desktop mx-auto">
         <motion.div
           className="hidden lg:block absolute top-[24px] left-30 right-30 h-[1px] bg-secondary rounded-full z-0"
-          style={{transformOrigin: "left"}}
-          initial={{scaleX: 0, opacity: 0}}
-          whileInView={{scaleX: 1, opacity: 1}}
-          viewport={{once: true}}
-          transition={{duration: 1, delay: 1}}
+          style={{ transformOrigin: "left" }}
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 1 }}
         />
 
         <div className="flex flex-col justify-center items-center lg:flex lg:flex-row lg:justify-between gap-4 lg:items-start  relative z-0">

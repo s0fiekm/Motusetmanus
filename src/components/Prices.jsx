@@ -1,6 +1,6 @@
 import React from "react";
 import PaymentCard from "./PaymentCard";
-import {GoDotFill} from "react-icons/go";
+import { GoDotFill } from "react-icons/go";
 
 export default function Prices() {
   return (
@@ -11,9 +11,12 @@ export default function Prices() {
       <div className="lg:w-lg text-primary flex flex-col lg:px-0">
         <h2>Pris & Betalingsløsninger</h2>
         <p>
-          Få en fleksibel ordning, der kan tilpasses dine behov og dit budget –
-          uanset om du er selvstændig eller enkeltperson i en virksomhed. Du
-          vælger selv, hvordan betalingen skal struktureres.
+          Få en fleksibel ordning, der kan tilpasses jeres behov og jeres
+          budget. I vælger selv, hvordan betalingen skal struktureres. Da
+          servicen foregår på jeres lokation, er det oplagt at anvende en
+          bruttolønsordning. Det er velundersøgt at investering i medarbejdere
+          er en strategisk fordel, der skaber øget engagement, højere
+          produktivitet og arbejdsglæde.
         </p>
         <div
           className="bg-primary w-full h-[0.5px] relative my-4
