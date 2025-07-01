@@ -3,7 +3,10 @@ import Image from "next/image";
 
 export default function ContactInfo() {
   return (
-    <div className="w-full min-h-[70vh] bg-surface flex flex-col lg:grid lg:grid-cols-2 ">
+    <div
+      id="contactInfo"
+      className="w-full min-h-[70vh] bg-surface flex flex-col lg:grid lg:grid-cols-2 "
+    >
       <div className="relative h-[600px] lg:h-auto w-full">
         <Image
           src="/assets/contact.jpg"

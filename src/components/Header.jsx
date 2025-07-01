@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
-import {useState} from "react";
+import { useState } from "react";
 import Image from "next/image";
 import CTAButton from "./CtaBtn";
 import Link from "next/link";
-import {RxCross2} from "react-icons/rx";
-import {RxHamburgerMenu} from "react-icons/rx";
-import {AnimatePresence, motion} from "framer-motion";
+import { RxCross2 } from "react-icons/rx";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -52,7 +52,7 @@ export default function Header() {
           </span>
         </Link>
         <Link
-          href="#contact"
+          href="#contactInfo"
           className="relative group transition-opacity duration-200 hover:opacity-80"
         >
           <span className="after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-secondary group-hover:after:w-full after:transition-all after:duration-300">
@@ -70,7 +70,7 @@ export default function Header() {
       </nav>
 
       <div className="hidden lg:block">
-        <CTAButton text="Book møde nu" href="/booking" target="_blank" />
+        <CTAButton text="Kontakt nu" href="#contact" target="_blank" />
       </div>
 
       <button
@@ -79,8 +79,8 @@ export default function Header() {
       >
         <motion.div
           initial={false}
-          animate={{rotate: menuOpen ? 90 : 0}}
-          transition={{duration: 0.3}}
+          animate={{ rotate: menuOpen ? 90 : 0 }}
+          transition={{ duration: 0.3 }}
         >
           {menuOpen ? <RxCross2 size={28} /> : <RxHamburgerMenu size={28} />}
         </motion.div>
@@ -90,10 +90,10 @@ export default function Header() {
         {menuOpen && (
           <motion.div
             key="mobile-menu"
-            initial={{opacity: 0, y: -20}}
-            animate={{opacity: 1, y: 0}}
-            exit={{opacity: 0, y: -20}}
-            transition={{duration: 0.3}}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
             className="z-40 fixed inset-0 bg-primary py-10 text-secondary flex flex-col gap-6 lg:hidden"
           >
             <div className=" z-50 fixed inset-0 bg-primary py-10 text-secondary flex flex-col px-mobile items-start mt-10 gap-6 lg:hidden">
@@ -110,13 +110,13 @@ export default function Header() {
               <Link href="#price" onClick={() => setMenuOpen(false)}>
                 Pris og betalingsmuligheder
               </Link>
-              <Link href="#contact" onClick={() => setMenuOpen(false)}>
+              <Link href="#contactInfo" onClick={() => setMenuOpen(false)}>
                 Kontakt
               </Link>
               <Link href="#FAQ" onClick={() => setMenuOpen(false)}>
                 FAQ
               </Link>
-              <CTAButton text="Book møde nu" href="/booking" target="_blank" />
+              <CTAButton text="Kontakt nu" href="#contact" target="_blank" />
             </div>
           </motion.div>
         )}
