@@ -8,7 +8,6 @@ export default function ContactForm() {
     phone: "",
     company_name: "",
     employees: "",
-    interest: "",
     message: "",
   });
 
@@ -39,7 +38,6 @@ export default function ContactForm() {
     if (!formData.company_name)
       newErrors.company_name = "Udfyld venligst virksomhedsnavn";
     if (!formData.employees) newErrors.employees = "Vælg antal ansatte";
-    if (!formData.interest) newErrors.interest = "Vælg en interesse";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -59,7 +57,7 @@ export default function ContactForm() {
     setLoading(false);
 
     if (res.ok) {
-      setStatus("Tak for din besked! Vi vender tilbage hurtigst muligt.");
+      setStatus("Tak for din besked! Jeg vender tilbage hurtigst muligt.");
       setFormData({
         name: "",
         email: "",
@@ -125,7 +123,7 @@ export default function ContactForm() {
         )}
       </div>
 
-      <div className="col-span-2 flex flex-col">
+      <div className=" flex flex-col">
         <input
           name="company_name"
           value={formData.company_name}
@@ -145,9 +143,10 @@ export default function ContactForm() {
           name="employees"
           value={formData.employees}
           onChange={handleChange}
-          className={`border-b p-2 outline-none border-primary text-primary ${
-            errors.employees ? "border-error" : "border-primary"
-          }`}
+          className={`border-b p-2 mt-1
+             outline-none border-primary text-primary ${
+               errors.employees ? "border-error" : "border-primary"
+             }`}
         >
           <option value="">Antal ansatte</option>
           <option value="1-5">1-5</option>
@@ -159,25 +158,6 @@ export default function ContactForm() {
         </select>
         {errors.employees && (
           <p className="text-sm text-error mt-1">*{errors.employees}</p>
-        )}
-      </div>
-
-      <div className="flex flex-col">
-        <select
-          name="interest"
-          value={formData.interest}
-          onChange={handleChange}
-          className={`border-b p-2 outline-none text-primary ${
-            errors.interest ? "border-error" : "border-primary"
-          }`}
-        >
-          <option value="">Primære interesse</option>
-          <option value="Behandling">Behandling</option>
-          <option value="Forebyggelse">Forebyggelse</option>
-          <option value="Begge dele">Begge dele</option>
-        </select>
-        {errors.interest && (
-          <p className="text-sm text-error mt-1">*{errors.interest}</p>
         )}
       </div>
 
@@ -195,9 +175,7 @@ export default function ContactForm() {
         <CtaBtn type="submit" loading={loading} text="Send besked" />
       </div>
       {status && (
-        <p className="col-span-2 text-center text-sm text-primary mt-2">
-          {status}
-        </p>
+        <p className="col-span-2 text-center  text-primary mt-2">{status}</p>
       )}
     </form>
   );
