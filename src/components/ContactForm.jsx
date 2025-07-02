@@ -64,7 +64,6 @@ export default function ContactForm() {
         phone: "",
         company_name: "",
         employees: "",
-        interest: "",
         message: "",
       });
     } else {
