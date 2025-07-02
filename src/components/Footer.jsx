@@ -12,16 +12,16 @@ export default function Footer() {
           <p>Motus og Manus - Bevægelse og Hånd</p>
         </div>
         <div className="flex flex-col gap-2 ">
-          <span>Telefon: +45 00 00 00 00 </span>
-          <span>Email: kontakt@motusogmanus.dk</span>
-          <span>CVR: 12345678</span>
+          <span>Telefon: +45 81 61 63 05 </span>
+          <span>Email: motusetmanus@yahoo.com</span>
+          <span>CVR: 38774441</span>
         </div>
         <div className=" flex flex-col gap-2">
           <Link href="#about">Om</Link>
           <Link href="#howItWorks">Hvordan fungerer det?</Link>
           <Link href="#price">Priser og betalingsmetoder</Link>
-          <Link href="#contact">Kontakt</Link>
-          <Link href="#FAQ">FAQ</Link>
+          <Link href="#contactInfo">Kontakt</Link>
+          <Link href="#faq">FAQ</Link>
         </div>
       </div>
 

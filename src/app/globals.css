@@ -4,12 +4,12 @@
 @theme {
   /* Farver */
   --color-primary: #646d55;
-  --color-secondary: #eae6db;
+  --color-secondary: #f5f3ed;
   --color-tertiary: #bcc1ae;
-  --color-surface: #f2f0e9;
+  --color-surface: #eae6db;
   --color-cta: #de774d;
   --color-ctaLight: #ebad94;
-  --color-ctaDark: #b25f3e;
+  --color-cta-dark: #b25f3e;
   --color-error: #e57373;
 
   /* Typografi */

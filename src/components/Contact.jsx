@@ -5,9 +5,9 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="flex flex-col lg:flex lg:flex-row sm:justify-start gap-10 lg:gap-24  lg:justify-between  w-full bg-secondary px-mobile  md:px-laptop  lg:px-desktop-m xl:px-desktop py-20 lg:place-items-start"
+      className=" grid grid-cols-1 gap-10 md:grid md:grid-cols-[1fr_2fr] 2xl:gap-40  w-full bg-secondary px-mobile  md:px-laptop  lg:px-desktop-m xl:px-desktop py-20 "
     >
-      <div className=" lg:w-lg text-primary lg:pt-8  flex flex-col">
+      <div className="  text-primary lg:pt-12 flex flex-col">
         <h2>
           Behandling der gør en forskel - både for medarbejderen og virksomheden
         </h2>
@@ -16,7 +16,7 @@ export default function Contact() {
           ordning kunne se ud for dig eller din virksomhed.
         </p>
       </div>
-      <div className="w-full lg:w-1/2 ">
+      <div className="w-full  ">
         <ContactForm />
       </div>
     </section>

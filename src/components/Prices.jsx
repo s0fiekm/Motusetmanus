@@ -6,9 +6,9 @@ export default function Prices() {
   return (
     <section
       id="price"
-      className="flex flex-col gap-10 lg:gap-0  lg:flex lg:flex-row w-full  md:px-laptop justify-between px-mobile lg:px-desktop-m xl:px-desktop bg-secondary py-30"
+      className="flex flex-col gap-10 md:gap-20  md:grid md:grid-cols-2  lg:grid lg:grid-cols-[1fr_2fr] w-full  md:px-laptop justify-between px-mobile  xl:px-desktop bg-secondary py-30"
     >
-      <div className="lg:w-lg text-primary flex flex-col lg:px-0">
+      <div className=" text-primary flex flex-col lg:px-0">
         <h2>Pris & Betalingsløsninger</h2>
         <p>
           Få en fleksibel ordning, der kan tilpasses jeres behov og jeres

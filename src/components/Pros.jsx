@@ -3,7 +3,7 @@ import ProsItem from "./ProsItem";
 
 export default function Pros() {
   return (
-    <section className="  md:px-laptop flex px-mobile lg:px-desktop-m xl:px-desktop flex-col w-full bg-secondary py-30 items-center gap-20">
+    <section className="  md:px-laptop flex px-mobile xl:px-desktop flex-col w-full bg-secondary py-30 items-center gap-20">
       <div className="flex flex-col text-center lg:w-3xl text-primary">
         <h3>
           Motus & Manus (latin for "bevægelse og hånd") tilbyder skræddersyede
@@ -18,7 +18,7 @@ export default function Pros() {
           trivsel og bundlinje.
         </p>
       </div>
-      <div className=" w-full gap-5 lg:gap-0 flex flex-col lg:flex items-flex-start lg:justify-between lg:flex-row">
+      <div className="w-full gap-10 flex flex-wrap justify-center lg:justify-between items-end text-center">
         <ProsItem
           src="/assets/fravær.svg"
           alt="fravær-ikon"

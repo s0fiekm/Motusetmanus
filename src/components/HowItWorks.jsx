@@ -30,7 +30,7 @@ export default function HowItWorksSection() {
     <section className=" relative w-full bg-primary text-secondary py-20 px-6">
       <h2 className=" text-center mb-20">Hvordan fungerer det?</h2>
 
-      <div className="relative lg:px-desktop mx-auto">
+      <div className="relative xl:px-desktop mx-auto">
         <motion.div
           className="hidden lg:block absolute top-[24px] left-30 right-30 h-[1px] bg-secondary rounded-full z-0"
           style={{ transformOrigin: "left" }}

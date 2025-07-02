@@ -60,7 +60,7 @@ export default function Header() {
           </span>
         </Link>
         <Link
-          href="#FAQ"
+          href="#faq"
           className="relative group transition-opacity duration-200 hover:opacity-80"
         >
           <span className="after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-secondary group-hover:after:w-full after:transition-all after:duration-300">

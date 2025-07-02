@@ -6,9 +6,9 @@ export default function About() {
   return (
     <section
       id="about"
-      className=" lg:gap-10 xl:gap-0 md:px-laptop lg:px-desktop-m px-mobile xl:px-desktop py-10 lg:py-20 lg:grid lg:grid-cols-2 w-full   items-center bg-surface  flex flex-col"
+      className=" md:gap-10 xl:gap-0 px-mobile xl:px-desktop py-10 lg:py-20 md:grid md:grid-cols-2 w-full   items-center bg-surface  flex flex-col"
     >
-      <div className="relative w-full max-w-[500px] h-[580px]  ">
+      <div className="relative w-full lg:max-w-[510px] h-[700px] lg:h-[580px]  ">
         <Image
           src="/assets/mikkel.jpg"
           alt="Mikkel"
@@ -16,8 +16,8 @@ export default function About() {
           className="object-cover object-[70%_20%] "
         />
       </div>
-      <div className="text-primary md:items-center lg:items-start flex flex-col gap-5  py-20  text-balance">
-        <div className="flex flex-col md:items-center  md:text-center lg:text-start lg:items-start">
+      <div className="text-primary  lg:items-start flex flex-col gap-5  py-20  xl:text-balance">
+        <div className="flex flex-col  lg:items-start">
           <h2>Om Mig - Mikkel Kjær Regnér, Fysioterapeut</h2>
           <p>
             Jeg er specialiseret i manuel behandling med over 7 års erfaring,

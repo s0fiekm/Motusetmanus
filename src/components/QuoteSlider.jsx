@@ -1,8 +1,8 @@
 "use client";
-import React, {useEffect, useState} from "react";
-import {FaArrowLeftLong} from "react-icons/fa6";
-import {FaArrowRight} from "react-icons/fa6";
-import {ImQuotesLeft} from "react-icons/im";
+import React, { useEffect, useState } from "react";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
+import { ImQuotesLeft } from "react-icons/im";
 
 const quotes = [
   {
@@ -51,10 +51,10 @@ export default function QuoteSlider() {
     <section className="w-full bg-primary gap-5 lg:gap-0 flex flex-col lg:flex lg:flex-row lg:justify-between text-secondary  lg:py-40 px-mobile py-20  lg:px-desktop-m xl:px-desktop  md:px-laptop">
       <div className="flex flex-col gap-10 w-full lg:w-1/3 ">
         <div>
-          <h1>
+          <h3>
             En sundhedsordning skal kunne mærkes - både fysisk og i
             arbejdsmiljøet.
-          </h1>
+          </h3>
           <p>
             Her er hvad tidligere kunder fortæller om deres oplevelse med Motus
             & Manus.

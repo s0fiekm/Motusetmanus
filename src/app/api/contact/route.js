@@ -1,30 +1,36 @@
-import {supabase} from "@/lib/supabaseClient";
+// pages/api/contact.js
+import { Resend } from "resend";
 
-export async function POST(req) {
-  const body = await req.json();
-  const {name, email, phone, company_name, employees, interest, message} = body;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-  const {error} = await supabase.from("contact_formular").insert([
-    {
-      name,
-      email,
-      phone,
-      company_name,
-      employees,
-      interest,
-      message,
-    },
-  ]);
+export default async function handler(req, res) {
+  if (req.method !== "POST") return res.status(405).end();
 
-  if (error) {
-    return new Response(JSON.stringify({error: error.message}), {
-      status: 500,
-      headers: {"Content-Type": "application/json"},
+  const { name, email, phone, company_name, employees, interest, message } =
+    req.body;
+
+  try {
+    await resend.emails.send({
+      from: "kontakt@motusetmanus.dk", // Skal være fra dit verificerede domæne
+      to: "motusetmanus@yahoo.com", // Her modtages beskeden
+      subject: `Ny besked fra ${name}`,
+      html: `
+        <h2>Ny besked fra kontaktformular</h2>
+        <p><strong>Navn:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Telefon:</strong> ${phone}</p>
+        <p><strong>Virksomhed:</strong> ${company_name}</p>
+        <p><strong>Antal ansatte:</strong> ${employees}</p>
+        <p><strong>Interesse:</strong> ${interest}</p>
+        <p><strong>Besked:</strong><br/>${message}</p>
+      `,
     });
-  }
 
-  return new Response(JSON.stringify({message: "Besked sendt!"}), {
-    status: 200,
-    headers: {"Content-Type": "application/json"},
-  });
+    return res.status(200).json({ success: true });
+  } catch (error) {
+    console.error("Fejl ved e-mail-afsendelse:", error);
+    return res
+      .status(500)
+      .json({ error: "Kunne ikke sende besked. Prøv igen senere." });
+  }
 }

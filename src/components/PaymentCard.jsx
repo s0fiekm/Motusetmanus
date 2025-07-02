@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function PaymentCard({text, title, number}) {
+export default function PaymentCard({ text, title, number }) {
   return (
     <div className="bg-tertiary p-6 rounded-2xl flex flex-row gap-4 items-start">
-      <div className=" opacity-40 text-secondary rounded-full  bg-primary w-8 h-8 flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full bg-primary text-secondary opacity-40 flex items-center justify-center text-sm leading-none font-medium shrink-0">
         <span>{number}</span>
       </div>
       <div className="flex flex-col gap-1">

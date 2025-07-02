@@ -1,6 +1,6 @@
 "use client";
-import {useState} from "react";
-import CTAButton from "./CtaBtn";
+import { useState } from "react";
+import CtaBtn from "./CtaBtn";
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -51,7 +51,7 @@ export default function ContactForm() {
 
     const res = await fetch("/api/contact", {
       method: "POST",
-      headers: {"Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
 
@@ -75,7 +75,10 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4 ">
+    <form
+      onSubmit={handleSubmit}
+      className="grid grid-cols-2 gap-4 bg-surface p-4 md:p-12 rounded-lg"
+    >
       <div className="col-span-2 flex flex-col">
         <input
           name="name"
@@ -188,8 +191,8 @@ export default function ContactForm() {
           className="border-b p-2 outline-none border-primary bg-transparent placeholder-primary"
         />
       </div>
-      <div className="col-2 flex justify-self-end">
-        <CTAButton type="submit" loading={loading} text="Send besked" />
+      <div className="col-2 flex justify-self-end mt-3">
+        <CtaBtn type="submit" loading={loading} text="Send besked" />
       </div>
       {status && (
         <p className="col-span-2 text-center text-sm text-primary mt-2">
