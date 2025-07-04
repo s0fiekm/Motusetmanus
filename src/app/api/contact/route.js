@@ -1,18 +1,22 @@
 import { Resend } from "resend";
-import { supabaseServer } from "@/lib/supabaseServer";
+import { getSupabaseServer } from "@/lib/supabaseServer";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req) {
   console.log("Start POST request håndtering.");
+
+  // 🔑 Initialiser Supabase her (inde i funktionen)
+  const supabaseServer = getSupabaseServer();
+
   try {
     const body = await req.json();
-    console.log("📥 Modtaget fra formular (API route):", body);
+    console.log("📥 Modtaget fra formular:", body);
 
     const { name, email, phone, company_name, employees, message } = body;
 
     if (!name || !email || !phone || !company_name || !employees || !message) {
-      console.error("⛔️ Manglende data i formularen (API route):", {
+      console.error("⛔️ Manglende data:", {
         name,
         email,
         phone,
@@ -26,7 +30,7 @@ export async function POST(req) {
       });
     }
 
-    console.log("Forsøger at indsætte i Supabase...");
+    console.log("📄 Indsætter i Supabase…");
     const { error: supabaseError, data } = await supabaseServer
       .from("kontakt")
       .insert([
@@ -42,26 +46,22 @@ export async function POST(req) {
       ]);
 
     if (supabaseError) {
-      console.error("🔥 Fejl fra Supabase (API route):", supabaseError);
+      console.error("🔥 Supabase-fejl:", supabaseError);
       return new Response(
-        JSON.stringify({
-          error: "Fejl ved indsættelse i Supabase.",
-          details:
-            supabaseError.message ||
-            supabaseError.details ||
-            "Ukendt Supabase fejl",
-        }),
+        JSON.stringify({ error: "Fejl ved indsættelse i Supabase." }),
         { status: 500, headers: { "Content-Type": "application/json" } }
       );
     }
+
     console.log("✅ Data indsat i Supabase:", data);
-    console.log("Forsøger at sende e-mail via Resend...");
+
+    console.log("📧 Sender e-mail via Resend…");
     const { error: emailError } = await resend.emails.send({
       from: "kontakt@motusetmanus.dk",
       to: "motusetsmanus@yahoo.com",
       subject: `Ny besked fra ${name}`,
       html: `
-        <h2>Ny besked fra mular</h2>
+        <h2>Ny besked fra formular</h2>
         <p><strong>Navn:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Telefon:</strong> ${phone}</p>
@@ -72,7 +72,7 @@ export async function POST(req) {
     });
 
     if (emailError) {
-      console.error("📧 Fejl fra Resend (API route):", emailError);
+      console.error("📧 Resend-fejl:", emailError);
       return new Response(
         JSON.stringify({ error: "Kunne ikke sende e-mail." }),
         {
@@ -81,14 +81,14 @@ export async function POST(req) {
         }
       );
     }
-    console.log("📧 E-mail sendt succesfuldt.");
 
+    console.log("✅ E-mail sendt succesfuldt.");
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
-    console.error("❌ Uventet fejl i API (catch blok):", error);
+    console.error("❌ Uventet fejl:", error);
     return new Response(JSON.stringify({ error: "Serverfejl. Prøv igen." }), {
       status: 500,
       headers: { "Content-Type": "application/json" },
