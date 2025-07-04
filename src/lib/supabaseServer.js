@@ -1,21 +1,23 @@
 import { createClient } from "@supabase/supabase-js";
 
 console.log("Supabase Server Client Initializing...");
-console.log(
-  "SUPABASE_URL fra env:",
-  process.env.SUPABASE_URL ? "Defined" : "Undefined",
-  process.env.SUPABASE_URL
-);
-console.log(
-  "SUPABASE_SERVICE_ROLE_KEY fra env:",
-  process.env.SUPABASE_SERVICE_ROLE_KEY ? "Defined" : "Undefined"
-);
 
-const supabaseServer = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY
-);
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-console.log("Supabase Server Client Initialized.");
+if (!supabaseUrl) {
+  throw new Error("❌ SUPABASE_URL (NEXT_PUBLIC_SUPABASE_URL) is required");
+}
+
+if (!serviceRoleKey) {
+  throw new Error("❌ SUPABASE_SERVICE_ROLE_KEY is required");
+}
+
+console.log("✅ SUPABASE_URL:", supabaseUrl);
+console.log("✅ SUPABASE_SERVICE_ROLE_KEY: Defined");
+
+const supabaseServer = createClient(supabaseUrl, serviceRoleKey);
+
+console.log("✅ Supabase Server Client Initialized.");
 
 export { supabaseServer };

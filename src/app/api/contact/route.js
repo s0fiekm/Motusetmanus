@@ -58,7 +58,7 @@ export async function POST(req) {
     console.log("Forsøger at sende e-mail via Resend...");
     const { error: emailError } = await resend.emails.send({
       from: "kontakt@motusetmanus.dk",
-      to: "motusetsmanus.yahoo.com",
+      to: "motusetsmanus@yahoo.com",
       subject: `Ny besked fra ${name}`,
       html: `
         <h2>Ny besked fra mular</h2>
